@@ -182,7 +182,8 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   # --- File Management & Search ---
   tree         # Visual directory structure
   file         # Determine file type
-  zip unzip    # Standard archives
+  zip    # Standard archives
+  unzip
   p7zip        # 7z archives
   ripgrep      # Super fast grep (rg)
   fd           # Super fast find
