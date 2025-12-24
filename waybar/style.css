@@ -1,0 +1,79 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Roboto", "Segoe UI", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.9);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* The workspace you are currently looking at */
+#workspaces button.active {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+/* Critical battery level turns red */
+#battery.critical {
+    background-color: #eb4d4b;
+}
+
+/* Normal state is handled by the default bar text color */
+
+#memory.warning {
+color: #FF8800; /* Bright Orange at 80% */
+font-weight: bold;
+}
+
+#memory.critical {
+color: #FF0000; /* Red at 95% */
+font-weight: bold;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+#temperature {
+color: #ffffff;
+}
+
+#temperature.critical {
+color: #ff0000;
+font-weight: bold;
+}
+
+/* Disconnected network turns orange */
+#network.disconnected {
+    background-color: #f0932b;
+}
