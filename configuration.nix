@@ -33,6 +33,8 @@
   # 3. Load the 'wl' module and blacklist conflicting open-source drivers
   boot.kernelModules = [ "wl" ];
   boot.blacklistedKernelModules = [ "b43" "bcma" "brcmfmac" "brcmsmac" "ssb" ];
+  # Add support for these filesystems at the kernel level
+boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
 
   # 4. Ensure Networking is enabled (if not already)
   #networking.networkmanager.enable = true;
@@ -155,6 +157,35 @@
     # -- File Manager --
     nautilus       # The file manager
     sushi          # Quick previewer (hit spacebar on a file to peek at it)
+    # --- GUI Disk Utilities ---
+  gparted      # Partition editor
+  gnome-disk-utility # "Disks" - often better for quick mounting/benchmarking
+
+  # --- Filesystem Helpers (Crucial for GParted to work on all formats) ---
+  ntfs3g       # NTFS support
+  exfat        # exFAT support
+  dosfstools   # FAT32 tools
+  hfsprogs     # MacOS HFS+ tools
+
+  # --- System Monitoring ---
+  btop         # Modern, beautiful version of htop
+  iotop        # See what's eating your disk I/O
+  nvtopPackages.full # GPU monitoring (NVIDIA/AMD/Intel)
+
+  # --- Network Tools ---
+  dig          # DNS lookup
+  wget         # File downloader
+  curl         # URL transfer
+  nmap         # Network scanner
+  ethtool      # Network card diagnostics
+
+  # --- File Management & Search ---
+  tree         # Visual directory structure
+  file         # Determine file type
+  zip unzip    # Standard archives
+  p7zip        # 7z archives
+  ripgrep      # Super fast grep (rg)
+  fd           # Super fast find
 
   ];
 
