@@ -1,35 +1,25 @@
 {
-  description = "Foxy NixOS flake with COSMIC experiment";
+  description = "Foxy NixOS System";
 
   inputs = {
-    # Your existing 25.11 source
+    # You are on the 25.11 branch, which HAS Cosmic natively
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-
-    # New input for COSMIC
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-    nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixos-cosmic, ... }@inputs: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-
-      # 1. Your original "safe" configuration
-      # Run: sudo nixos-rebuild switch --flake .#Foxy
+      # Your Stable System
       Foxy = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-        ];
+        modules = [ ./configuration.nix ];
       };
 
-      # 2. Your experimental COSMIC configuration
-      # Run: sudo nixos-rebuild switch --flake .#Foxy-Cosmic
+      # Your Cosmic Experiment
       Foxy-Cosmic = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix         # Keeps your users, apps, and hardware settings
-          ./cosmic-configuration.nix  # A new file just for COSMIC settings
-          nixos-cosmic.nixosModules.default
+          ./configuration.nix
+          ./cosmic-configuration.nix
         ];
       };
     };
