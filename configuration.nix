@@ -68,6 +68,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  services.samba.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -114,6 +115,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   programs.vscode.enable = true;
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
+  programs.fish.enable = true;
 
   fonts.packages = with pkgs; [
     font-awesome       # The standard library of icons
@@ -187,7 +189,10 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   p7zip        # 7z archives
   ripgrep      # Super fast grep (rg)
   fd           # Super fast find
-
+ # for backing up
+ timeshift
+ backintime
+ rsync
   ];
 
 
