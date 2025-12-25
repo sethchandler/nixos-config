@@ -102,7 +102,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   users.users.seth = {
     isNormalUser = true;
     description = "Seth Chandler";
-    extraGroups = [ "networkmanager" "wheel","video","input" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "video" "input" "libvirtd"];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
