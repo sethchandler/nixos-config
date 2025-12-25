@@ -116,6 +116,8 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   programs.hyprland.enable = true;
   programs.waybar.enable = true;
   programs.fish.enable = true;
+  programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   fonts.packages = with pkgs; [
     font-awesome       # The standard library of icons
@@ -130,6 +132,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+  vim
   git
   gh
   antigravity
@@ -140,6 +143,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   code-cursor
   libreoffice
   librewolf-bin
+  signal-desktop
   #google-chrome
   #spotify
   # -- Core Tools --
