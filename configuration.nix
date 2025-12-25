@@ -193,6 +193,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
  timeshift
  backintime
  rsync
+ matugen
   ];
 
 
