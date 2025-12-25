@@ -16,15 +16,6 @@
                     ];
       };
 
-      # Your Cosmic Experiment
-      Rose-Cosmic = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          ./cosmic-configuration.nix
-          ./rose-hardware.nix
-        ];
-      };
     };
   };
 }
