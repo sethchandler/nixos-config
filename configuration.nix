@@ -114,7 +114,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   programs.nix-ld.enable = true;
   programs.vscode.enable = true;
   programs.hyprland.enable = true;
-  programs.waybar.enable = true;
+  #programs.waybar.enable = true;
   programs.fish.enable = true;
   programs.virt-manager.enable = true;
   virtualisation.libvirtd.enable = true;
@@ -199,6 +199,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
  rsync
  matugen
  swww
+ waybar
   ];
 
 
