@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs,lib, ... }:
 
 {
   # 1. Enable the native COSMIC Desktop
