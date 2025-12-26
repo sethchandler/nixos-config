@@ -37,8 +37,7 @@
 boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
 
   # 4. Ensure Networking is enabled (if not already)
-  #networking.networkmanager.enable = true;
-  # Enable networking
+
   networking.networkmanager.enable = true;
 
   # Set your time zone.
