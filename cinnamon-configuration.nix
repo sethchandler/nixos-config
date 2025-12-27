@@ -6,4 +6,9 @@
 
   # 2. Enable Cinnamon-specific applications (Nemo, Xed, etc.)
   services.cinnamon.apps.enable = true;
+
+  # 3. Add xinit to provide 'startx' which some sessions might expect when launched from Wayland greeters
+  environment.systemPackages = with pkgs; [
+    xorg.xinit
+  ];
 }
