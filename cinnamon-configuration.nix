@@ -10,5 +10,10 @@
   # 3. Add xinit to provide 'startx' which some sessions might expect when launched from Wayland greeters
   environment.systemPackages = with pkgs; [
     xorg.xinit
+    cinnamon-common
+    nemo-with-extensions
+    mint-themes
+    mint-x-icons
+    mint-cursor-themes
   ];
 }
