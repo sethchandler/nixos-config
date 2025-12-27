@@ -10,10 +10,12 @@
   # 3. Add xinit to provide 'startx' which some sessions might expect when launched from Wayland greeters
   environment.systemPackages = with pkgs; [
     xorg.xinit
+    xorg.xf86inputlibinput  # X11 input driver for mouse/keyboard
     cinnamon-common
     nemo-with-extensions
     mint-themes
     mint-x-icons
     mint-cursor-themes
+    rofi
   ];
 }
