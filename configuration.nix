@@ -7,6 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./broadcom.nix
      # ./hardware-configuration.nix
     ];
 
@@ -20,19 +21,9 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-# 1. Allow unfree software (required for proprietary Broadcom drivers)
+# Broadcom settings moved to ./broadcom.nix
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  nixpkgs.config.permittedInsecurePackages = [
-                "broadcom-sta-6.30.223.271-59-6.12.63"
-              ];
-
-  # 2. Add the Broadcom STA driver to the kernel
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-
-  # 3. Load the 'wl' module and blacklist conflicting open-source drivers
-  boot.kernelModules = [ "wl" ];
-  boot.blacklistedKernelModules = [ "b43" "bcma" "brcmfmac" "brcmsmac" "ssb" ];
   # Add support for these filesystems at the kernel level
 boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
 

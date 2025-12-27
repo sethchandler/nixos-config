@@ -27,6 +27,17 @@
           ./rose-hardware.nix
         ];
       };
+
+      # The "Kitchen Sink" - KDE + COSMIC + Cinnamon
+      Rose-Experimental = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
+          ./cosmic-configuration.nix
+          ./cinnamon-configuration.nix
+          ./rose-hardware.nix
+        ];
+      };
     };
   };
 }
