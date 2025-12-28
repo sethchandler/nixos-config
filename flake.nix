@@ -28,13 +28,24 @@
         ];
       };
 
-      # The "Kitchen Sink" - KDE + COSMIC + Cinnamon
+      # Lightweight XFCE-only configuration
+      Rose-XFCE = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
+          ./xfce-configuration.nix
+          ./rose-hardware.nix
+        ];
+      };
+
+      # The "Kitchen Sink" - KDE + COSMIC + Cinnamon + XFCE
       Rose-Experimental = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
           ./cosmic-configuration.nix
           ./cinnamon-configuration.nix
+          ./xfce-configuration.nix
           ./rose-hardware.nix
         ];
       };
