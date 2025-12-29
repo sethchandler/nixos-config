@@ -20,9 +20,14 @@
     settings = {
       "colorscheme" = "simple";
     };
-    keybindings = {
-      "Alt-/" = "lua:comment.comment";
-      "CtrlUnderscore" = "lua:comment.comment";
-    };
   };
+
+  # Manually managing the bindings file because the module doesn't support it
+  xdg.configFile."micro/bindings.json".text = ''
+    {
+        "Alt-/": "lua:comment.comment",
+        "CtrlUnderscore": "lua:comment.comment"
+    }
+  '';
 }
+
