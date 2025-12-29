@@ -20,7 +20,7 @@
     settings = {
       "colorscheme" = "simple";
     };
-    bindings = {
+    keybindings = {
       "Alt-/" = "lua:comment.comment";
       "CtrlUnderscore" = "lua:comment.comment";
     };
