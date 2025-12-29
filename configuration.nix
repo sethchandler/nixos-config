@@ -142,6 +142,7 @@ boot.supportedFilesystems = [ "ntfs" "cifs" "exfat" ];
   libreoffice
   librewolf-bin
   signal-desktop
+  warp-terminal
   #google-chrome
   #spotify
   # -- Core Tools --
